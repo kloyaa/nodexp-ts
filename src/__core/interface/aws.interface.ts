@@ -5,5 +5,6 @@ export interface AwsSecretsResult {
     JWT_ACCESS_KEY: string;
     CRYPTO_KEY: string;
     APP_NAME: string;
+    ENCRYPTION_SECRET: string;
 }
   
