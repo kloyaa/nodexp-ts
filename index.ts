@@ -39,6 +39,8 @@ async function runApp() {
         console.log(`RUNNING ON ${process.env.NODE_ENV}`)
         console.log(`RUNNING ON ${port}`)
     });
+
+    return true;
 }
 
 runApp();
