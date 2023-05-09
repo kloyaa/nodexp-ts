@@ -7,10 +7,17 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "npx tsc",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "start": "node dist/index.js",
     "start:local": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pre-commit": {
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist"
   },
   "dependencies": {
     "@aws-sdk/client-secrets-manager": "^3.329.0",
@@ -33,6 +40,7 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^20.1.1",
     "concurrently": "^8.0.1",
+    "pre-commit": "^1.2.2",
     "typescript": "^5.0.4"
   }
 }
