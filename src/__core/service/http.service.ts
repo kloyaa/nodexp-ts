@@ -11,7 +11,6 @@ export async function handlePromise<T>(promise: Promise<T>): Promise<T | string>
   try {
     return await promise as T;
     } catch (error) {
-      console.log("handlePromise")
       winstonLogger.error(error);
       return httpMessage[10203].code;
     }

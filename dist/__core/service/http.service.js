@@ -24,7 +24,6 @@ function handlePromise(promise) {
             return yield promise;
         }
         catch (error) {
-            console.log("handlePromise");
             utils_1.winstonLogger.error(error);
             return constants_1.httpMessage[10203].code;
         }
