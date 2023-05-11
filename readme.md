@@ -11,11 +11,11 @@ To get started, clone the repository and install the dependencies using npm. Onc
 Thank you for choosing NiftyTrail and we hope you enjoy using our app!
 
 ENV VARIABLES
-<code>
-  NODE_ENV = development or production
+<pre>
+  NODE_ENV = "development" or "production"
   PORT = number
   CONNECTION_STRING = string
   AWS_ACCESS_KEY_ID = string
   AWS_SECRET_ACCESS_KEY = string
   AWS_SECRET_ID = string
-</code>
+</pre>
