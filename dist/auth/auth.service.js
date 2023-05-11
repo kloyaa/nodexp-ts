@@ -13,7 +13,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegisterService = exports.LoginService = void 0;
-require("dotenv").config();
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const constants_1 = require("../__core/constants");
 const utils_1 = require("../__core/utils");
@@ -24,11 +23,7 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
         const user = yield user_model_1.UserModel.findOne({ username: data.username }).lean();
         if (!user)
             return constants_1.httpMessage[10301].code;
-        const secrets = yield (0, utils_1.getAwsSecrets)({
-            awsSecretId: process.env.AWS_SECRET_ID,
-            awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
-            awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        });
+        const secrets = yield (0, utils_1.getAwsSecrets)();
         if (!secrets)
             return constants_1.httpMessage[10203].code;
         const [compare, generatedToken] = yield Promise.all([
@@ -54,11 +49,7 @@ const register = (data) => __awaiter(void 0, void 0, void 0, function* () {
         const user = yield user_model_1.UserModel.findOne({ username: data.username });
         if (user)
             return constants_1.httpMessage[10205].code;
-        const secrets = yield (0, utils_1.getAwsSecrets)({
-            awsSecretId: process.env.AWS_SECRET_ID,
-            awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
-            awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        });
+        const secrets = yield (0, utils_1.getAwsSecrets)();
         if (!secrets)
             return constants_1.httpMessage[10203].code;
         const hashValue = yield bcrypt_1.default.hash(data.password, 12);

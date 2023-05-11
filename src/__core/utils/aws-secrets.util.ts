@@ -1,23 +1,18 @@
+require("dotenv").config();
 import { SecretsManagerClient, GetSecretValueCommand, SecretsManagerClientConfig } from "@aws-sdk/client-secrets-manager";
 import { AwsSecretsResult } from "../interface";
 
-interface AwsSecretsPayload {
-    awsSecretId: string;
-    awsAccessKeyId: string;
-    awsSecretAccessKey: string;
-}
-
-export const getAwsSecrets = async (data: AwsSecretsPayload): Promise<AwsSecretsResult | null> => {
+export const getAwsSecrets = async (): Promise<AwsSecretsResult | null> => {
     const clientConfig: SecretsManagerClientConfig = {
         region: "ap-southeast-1",
         credentials: {
-            accessKeyId: data.awsAccessKeyId,
-            secretAccessKey: data.awsSecretAccessKey,
+            accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         }
     };
     const client = new SecretsManagerClient(clientConfig);
     const params = {
-        SecretId: data.awsSecretId,
+        SecretId: process.env.AWS_SECRET_ID,
         VersionStage: "AWSCURRENT",
     };
     try {

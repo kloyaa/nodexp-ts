@@ -1,4 +1,3 @@
-require("dotenv").config();
 import bcrypt from "bcrypt";
 import { httpMessage } from "../__core/constants";
 import { TAuthLogin } from "../__core/interface";
@@ -11,11 +10,7 @@ const login = async (data: TAuthLogin): Promise<any> => {
         const user = await UserModel.findOne({ username: data.username }).lean();
         if (!user) return httpMessage[10301].code;
 
-        const secrets = await getAwsSecrets({
-            awsSecretId: process.env.AWS_SECRET_ID!,
-            awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-            awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
-        });
+        const secrets = await getAwsSecrets();
         if(!secrets) return httpMessage[10203].code;
 
         const [compare, generatedToken] = await Promise.all([
@@ -41,12 +36,7 @@ const register = async (data: TAuthLogin) => {
         const user = await UserModel.findOne({ username: data.username });
         if (user) return httpMessage[10205].code;
     
-        const secrets = await getAwsSecrets({
-            awsSecretId: process.env.AWS_SECRET_ID!,
-            awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-            awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
-        });
-    
+        const secrets = await getAwsSecrets();
         if(!secrets) return httpMessage[10203].code;
     
         const hashValue = await bcrypt.hash(data.password, 12);

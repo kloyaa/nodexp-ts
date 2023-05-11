@@ -10,12 +10,7 @@ import securityController from "./security/security.controller";
 const app = express();
   
 async function runApp() {
-    const secrets = await getAwsSecrets({
-        awsSecretId:  process.env.AWS_SECRET_ID!,
-        awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-        awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
-    });
-    
+    const secrets = await getAwsSecrets();
     let port = Number(process.env.PORT);
     let connectionString = process.env.CONNECTION_STRING!
 

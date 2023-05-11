@@ -23,11 +23,7 @@ const security_controller_1 = __importDefault(require("./security/security.contr
 const app = (0, express_1.default)();
 function runApp() {
     return __awaiter(this, void 0, void 0, function* () {
-        const secrets = yield (0, utils_1.getAwsSecrets)({
-            awsSecretId: process.env.AWS_SECRET_ID,
-            awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
-            awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        });
+        const secrets = yield (0, utils_1.getAwsSecrets)();
         let port = Number(process.env.PORT);
         let connectionString = process.env.CONNECTION_STRING;
         if (process.env.NODE_ENV === "production") {
