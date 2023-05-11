@@ -18,6 +18,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const cors_1 = __importDefault(require("cors"));
 const express_useragent_1 = __importDefault(require("express-useragent"));
 const utils_1 = require("./__core/utils");
+const auth_controller_1 = __importDefault(require("./auth/auth.controller"));
+const security_controller_1 = __importDefault(require("./security/security.controller"));
 const app = (0, express_1.default)();
 function runApp() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -38,13 +40,19 @@ function runApp() {
             .connect(connectionString)
             .then(() => console.log("DATABASE CONNECTED"))
             .catch(() => console.log("DABASE DISCONNECTED"));
+        /**
+         * @description Middlewares
+         */
         app.use((0, cors_1.default)({ origin: "*" }));
         app.use(express_useragent_1.default.express());
         app.use(express_1.default.json());
         app.use(express_1.default.urlencoded({ limit: '25mb', extended: true }));
+        /**
+         * @description Routes
+         */
         app.get('/', (req, res) => res.send('Express Typescript on Vercel'));
-        app.use("/api/v1", require("./controllers/security.controller"));
-        app.use("/api/v1", require("./controllers/auth.controller"));
+        app.use("/api/v1", auth_controller_1.default);
+        app.use("/api/v1", security_controller_1.default);
         app.listen(port, () => {
             console.log(`RUNNING ON ${process.env.NODE_ENV}`);
             console.log(`RUNNING ON ${port}`);
