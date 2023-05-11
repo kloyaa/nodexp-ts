@@ -6,11 +6,12 @@ import useragent from 'express-useragent';
 import { getAwsSecrets } from "./__core/utils";
 import authController from "./auth/auth.controller";
 import securityController from "./security/security.controller";
+import { HandlePromise } from "./__core/service";
 
 const app = express();
   
 async function runApp() {
-    const secrets = await getAwsSecrets();
+    const secrets = await HandlePromise<any>(getAwsSecrets());
     let port = Number(process.env.PORT);
     let connectionString = process.env.CONNECTION_STRING!
 

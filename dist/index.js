@@ -20,10 +20,11 @@ const express_useragent_1 = __importDefault(require("express-useragent"));
 const utils_1 = require("./__core/utils");
 const auth_controller_1 = __importDefault(require("./auth/auth.controller"));
 const security_controller_1 = __importDefault(require("./security/security.controller"));
+const service_1 = require("./__core/service");
 const app = (0, express_1.default)();
 function runApp() {
     return __awaiter(this, void 0, void 0, function* () {
-        const secrets = yield (0, utils_1.getAwsSecrets)();
+        const secrets = yield (0, service_1.HandlePromise)((0, utils_1.getAwsSecrets)());
         let port = Number(process.env.PORT);
         let connectionString = process.env.CONNECTION_STRING;
         if (process.env.NODE_ENV === "production") {
