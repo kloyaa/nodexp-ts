@@ -28,7 +28,6 @@ export const getAwsSecrets = async (data: AwsSecretsPayload): Promise<AwsSecrets
         }
         return null;
     } catch (error) {
-        console.error(error);
-        return null;
+        throw error;
     }
 }

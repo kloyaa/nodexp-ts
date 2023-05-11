@@ -33,8 +33,7 @@ const getAwsSecrets = (data) => __awaiter(void 0, void 0, void 0, function* () {
         return null;
     }
     catch (error) {
-        console.error(error);
-        return null;
+        throw error;
     }
 });
 exports.getAwsSecrets = getAwsSecrets;

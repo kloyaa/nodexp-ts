@@ -8,3 +8,7 @@ interface IAuthProperties {
 
 export type TAuthLogin = Pick<IAuthProperties, "username" | "password" | "device">;
 
+export interface ILoginResponse { 
+    accessToken: string;
+}
+

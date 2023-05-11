@@ -45,8 +45,7 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
         return `${encryptedToken.iv}.${encryptedToken.data}`;
     }
     catch (error) {
-        console.log(error);
-        return constants_1.httpMessage[10203].code;
+        throw error;
     }
 });
 exports.LoginService = login;
@@ -73,8 +72,7 @@ const register = (data) => __awaiter(void 0, void 0, void 0, function* () {
         return `${encryptedToken.iv}.${encryptedToken.data}`;
     }
     catch (error) {
-        utils_1.winstonLogger.error(error.stack);
-        return constants_1.httpMessage[10203].code;
+        throw error;
     }
 });
 exports.RegisterService = register;

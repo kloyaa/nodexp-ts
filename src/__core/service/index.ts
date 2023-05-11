@@ -1,0 +1,1 @@
+export { handlePromise as HandlePromise } from "./http.service";

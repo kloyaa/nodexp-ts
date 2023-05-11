@@ -16,4 +16,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./aws.interface"), exports);
 __exportStar(require("./auth.interface"), exports);
+__exportStar(require("./http.interface"), exports);
 //# sourceMappingURL=index.js.map
