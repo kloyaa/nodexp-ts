@@ -4,9 +4,8 @@ import { httpMessage } from "../__core/constants";
 import { expressMiddlewares } from '../__core/middlewares/is-valid-request-body.utils';
 import { LoginService, RegisterService } from "./auth.service";
 import { loginValidators } from "./auth.validator";
-import { ILoginResponse, TAuthLogin } from '../__core/interface/auth.interface';
+import { TAuthLogin } from '../__core/interface/auth.interface';
 import { HandlePromise } from "../__core/service/index";
-import { HttpMessageKey } from "../__core/interface/http.interface";
 const router = express.Router();
 
 router.post("/auth/login", 
