@@ -9,3 +9,13 @@ Additionally, the app uses AWS for cloud computing and storage services, includi
 To get started, clone the repository and install the dependencies using npm. Once you have set up your MongoDB and AWS credentials, you can run the app locally by typing `npm start` in your terminal. Alternatively, you can deploy the app to AWS by configuring your deployment settings in the AWS console.
 
 Thank you for choosing NiftyTrail and we hope you enjoy using our app!
+
+ENV VARIABLES
+<pre>
+  NODE_ENV = "development" or "production"
+  PORT = number
+  CONNECTION_STRING = string
+  AWS_ACCESS_KEY_ID = string
+  AWS_SECRET_ACCESS_KEY = string
+  AWS_SECRET_ID = string
+</pre>
