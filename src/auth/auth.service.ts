@@ -56,6 +56,12 @@ const register = async (data: TAuthLogin) => {
             jwtSecret: secrets?.JWT_ACCESS_KEY!,
         });
     
+        emitter.emit(Activity.LOGIN,  {
+            userId: user._id,
+            activity: "REGISTER",
+            device: data.device
+        });
+
         const encryptedToken = encrypt(generatedToken, secrets?.JWT_ACCESS_KEY!);
         return `${encryptedToken.iv}.${encryptedToken.data}`;
     } catch (error) {

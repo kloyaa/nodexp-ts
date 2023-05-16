@@ -18,8 +18,6 @@ router.post("/auth/login",
     const { username, password, device }: TAuthLogin = req.body;
     const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
-    emitter.emit('activity', "USER_LOGIN", req.body);
-
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res
         .status(400)
@@ -44,18 +42,27 @@ router.post("/auth/login",
 router.post("/auth/register",
     expressMiddlewares(loginValidators),  
     async (req: Request, res: Response) => {
-
     const { username, password, device }: TAuthLogin = req.body;
+    const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res
         .status(400)
         .json({ errors: errors.array() });
 
-    const register = await HandlePromise<string>(RegisterService({ username, password, device }));
-    if(register === '10205') return res
-        .status(401)
-        .json(httpMessage[10205]);
+
+    const register = await HandlePromise<string>(RegisterService({ 
+        username, 
+        password, 
+        device: { ...device, ipAddress }  
+    }));
+
+    const hasError = await HandlePromiseError<String | Boolean>(register);
+    if(hasError && typeof hasError === 'string') {
+        return res
+            .status(400)
+            .json(httpMessage[hasError]);
+    }
 
     return res.status(200).json({ accessToken: register });
 });
