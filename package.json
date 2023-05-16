@@ -13,7 +13,9 @@
     "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:local": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "prettier": "prettier --write \"src/**/*.ts\""
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
+    "compodoc:run": "compodoc -s -d ./documentation"
   },
   "pre-commit": [
     "ts.check",
@@ -37,6 +39,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.19",
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.13",
     "@types/cron": "^2.0.1",
