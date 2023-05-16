@@ -5,7 +5,7 @@ import { generateJwt, getAwsSecrets } from "../__core/utils";
 import { encrypt } from "../__core/utils/encrypt.util";
 import { UserModel } from '../user/user.model';
 import { emitter } from "../__core/events/emitter.event";
-import { Activity } from "../__core/events/types.event";
+import { Activity, ActivityType } from "../__core/events/types.event";
 
 const login = async (data: TAuthLogin): Promise<any> => {
     try {
@@ -28,7 +28,7 @@ const login = async (data: TAuthLogin): Promise<any> => {
 
         emitter.emit(Activity.LOGIN,  {
             userId: user._id,
-            activity: "LOGIN",
+            activity: ActivityType.LOGIN,
             device: data.device
         });
 
@@ -56,9 +56,9 @@ const register = async (data: TAuthLogin) => {
             jwtSecret: secrets?.JWT_ACCESS_KEY!,
         });
     
-        emitter.emit(Activity.LOGIN,  {
+        emitter.emit(Activity.ACCOUNT_CREATION,  {
             userId: createdUser._id,
-            activity: "REGISTER",
+            activity: ActivityType.ACCOUNT_CREATION,
             device: data.device
         });
 

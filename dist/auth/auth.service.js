@@ -40,7 +40,7 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
             return constants_1.httpMessage[10301].code;
         emitter_event_1.emitter.emit(types_event_1.Activity.LOGIN, {
             userId: user._id,
-            activity: "LOGIN",
+            activity: types_event_1.ActivityType.LOGIN,
             device: data.device
         });
         const encryptedToken = (0, encrypt_util_1.encrypt)(generatedToken, secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY);
@@ -66,9 +66,9 @@ const register = (data) => __awaiter(void 0, void 0, void 0, function* () {
             jwtExpiry: "1h",
             jwtSecret: secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY,
         });
-        emitter_event_1.emitter.emit(types_event_1.Activity.LOGIN, {
+        emitter_event_1.emitter.emit(types_event_1.Activity.ACCOUNT_CREATION, {
             userId: createdUser._id,
-            activity: "REGISTER",
+            activity: types_event_1.ActivityType.ACCOUNT_CREATION,
             device: data.device
         });
         const encryptedToken = (0, encrypt_util_1.encrypt)(generatedToken, secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY);

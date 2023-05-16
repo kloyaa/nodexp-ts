@@ -9,3 +9,12 @@ emitter.on('login-activity', (payload: any) => {
         device: payload.device
     }).save();
 });
+
+emitter.on('register-activity', (payload: any) => {
+    new LogActivityModel({  
+        user: payload.userId, 
+        editor: payload.userId, 
+        activity: payload.activity,
+        device: payload.device
+    }).save();
+});

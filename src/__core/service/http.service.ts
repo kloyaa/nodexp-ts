@@ -20,6 +20,11 @@ export async function handlePromise<T>(promise: Promise<T>): Promise<T | string>
     }
 }
 
+/**
+ * @description Wraps a promise in error handling and logging logic.
+ * @param code typeof string
+ * @returns string or boolean 
+ */
 export async function handlePromiseError<T>(code: string): Promise<T> {
   const httpMessages: HttpMessage  = httpMessage;
   for (const key in httpMessages) {

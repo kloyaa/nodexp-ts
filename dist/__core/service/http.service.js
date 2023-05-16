@@ -29,6 +29,11 @@ function handlePromise(promise) {
     });
 }
 exports.handlePromise = handlePromise;
+/**
+ * @description Wraps a promise in error handling and logging logic.
+ * @param code typeof string
+ * @returns string or boolean
+ */
 function handlePromiseError(code) {
     return __awaiter(this, void 0, void 0, function* () {
         const httpMessages = constants_1.httpMessage;
