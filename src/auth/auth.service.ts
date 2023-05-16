@@ -24,7 +24,14 @@ const login = async (data: TAuthLogin): Promise<any> => {
             })
         ]);
 
-        if(!matched) return httpMessage[10301].code;
+        if(!matched) {
+            emitter.emit(Activity.LOGIN,  {
+                userId: user._id,
+                activity: ActivityType.LOGIN_FAILURE,
+                device: data.device
+            });
+            return httpMessage[10301].code;
+        }
 
         emitter.emit(Activity.LOGIN,  {
             userId: user._id,

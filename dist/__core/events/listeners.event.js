@@ -18,4 +18,4 @@ emitter_event_1.emitter.on('register-activity', (payload) => {
         device: payload.device
     }).save();
 });
-//# sourceMappingURL=events.js.map
+//# sourceMappingURL=listeners.event.js.map

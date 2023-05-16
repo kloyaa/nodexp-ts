@@ -7,7 +7,7 @@ import { getAwsSecrets } from "./__core/utils";
 import authController from "./auth/auth.controller";
 import securityController from "./security/security.controller";
 import "./__core/events/emitter.event"
-import  "./__core/events/events";
+import  "./__core/events/listeners.event";
 const app = express();
   
 async function runApp() {

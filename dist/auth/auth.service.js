@@ -36,8 +36,14 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
                 jwtSecret: secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY,
             })
         ]);
-        if (!matched)
+        if (!matched) {
+            emitter_event_1.emitter.emit(activity_enum_1.Activity.LOGIN, {
+                userId: user._id,
+                activity: activity_enum_1.ActivityType.LOGIN_FAILURE,
+                device: data.device
+            });
             return constants_1.httpMessage[10301].code;
+        }
         emitter_event_1.emitter.emit(activity_enum_1.Activity.LOGIN, {
             userId: user._id,
             activity: activity_enum_1.ActivityType.LOGIN,

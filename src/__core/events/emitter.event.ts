@@ -1,7 +1,2 @@
-// event.ts
-
 import EventEmitter from 'eventemitter3';
-
-const emitter = new EventEmitter();
-
-export { emitter };
+export const emitter = new EventEmitter();

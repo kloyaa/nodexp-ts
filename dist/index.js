@@ -21,7 +21,7 @@ const utils_1 = require("./__core/utils");
 const auth_controller_1 = __importDefault(require("./auth/auth.controller"));
 const security_controller_1 = __importDefault(require("./security/security.controller"));
 require("./__core/events/emitter.event");
-require("./__core/events/events");
+require("./__core/events/listeners.event");
 const app = (0, express_1.default)();
 function runApp() {
     return __awaiter(this, void 0, void 0, function* () {
