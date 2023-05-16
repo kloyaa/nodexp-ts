@@ -1,0 +1,340 @@
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'b925b9e0-43c0-4b71-bee5-56f599761e7c',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 13:21:50',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: '52b0c04d-e66e-4d17-ac53-2350f5624e51',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 13:21:55',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'faa41aa0-ee64-4f68-861b-07303a710c3d',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 13:21:58',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: '83669832-0f9a-43fc-80d9-d045f972373b',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 13:22:11',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'c2d71f93-d97e-4e7a-b518-2de109355fe6',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 13:22:32',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: '56e1ddb3-9a53-4873-97db-2dd7d623e5c1',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 13:22:38',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{ message: '10301', level: 'error', timestamp: '2023-05-16 13:43:59' }
+{ message: '10301', level: 'error', timestamp: '2023-05-16 13:44:34' }
+{
+  level: 'error',
+  timestamp: '2023-05-16 13:44:54',
+  message: '10301',
+  stack: 'Error: 10301\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:27:27\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:5:58)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 13:45:14',
+  message: '10301',
+  stack: 'Error: 10301\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:27:27\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:5:58)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 13:52:42',
+  message: '10301',
+  stack: 'Error: 10301\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:27:27\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:5:58)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 13:53:26',
+  message: '10301',
+  stack: 'Error: 10301\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:27:27\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:5:58)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 13:54:12',
+  message: '10301',
+  stack: 'Error: 10301\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:27:27\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:5:58)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 14:04:19',
+  message: '10301',
+  stack: 'Error: 10301\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:28:27\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:5:58)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 14:04:42',
+  message: '10301',
+  stack: 'Error: 10301\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:28:27\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\dist\\__core\\service\\http.service.js:5:58)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: '796e7a77-4c13-4621-bc41-5d7a253d283a',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 14:24:06',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: '120c425d-a808-4b82-b416-946235998552',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 14:24:11',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: '980e6891-3f4f-4201-9665-035f1e92a6d1',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 14:24:19',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  name: 'UnrecognizedClientException',
+  '$fault': 'client',
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'ca076bd2-b7a4-47fe-b6ce-48485619ebb2',
+    extendedRequestId: undefined,
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  __type: 'UnrecognizedClientException',
+  message: 'The security token included in the request is invalid.',
+  level: 'error',
+  timestamp: '2023-05-16 14:26:54',
+  stack: 'UnrecognizedClientException: The security token included in the request is invalid.\n' +
+    '    at throwDefaultError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:8:22)\n' +
+    '    at C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\smithy-client\\dist-cjs\\default-error-handler.js:18:39\n' +
+    '    at de_GetSecretValueCommandError (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\client-secrets-manager\\dist-cjs\\protocols\\Aws_json1_1.js:507:20)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-serde\\dist-cjs\\deserializerMiddleware.js:7:24\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-signing\\dist-cjs\\middleware.js:14:20\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-retry\\dist-cjs\\retryMiddleware.js:27:46\n' +
+    '    at async C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\@aws-sdk\\middleware-logger\\dist-cjs\\loggerMiddleware.js:7:26'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 17:09:38',
+  message: 'Operation `users.findOne()` buffering timed out after 10000ms',
+  stack: 'MongooseError: Operation `users.findOne()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:569:17)\n' +
+    '    at processTimers (node:internal/timers:512:7)'
+}
+{
+  level: 'error',
+  timestamp: '2023-05-16 17:14:07',
+  message: 'Operation `users.findOne()` buffering timed out after 10000ms',
+  stack: 'MongooseError: Operation `users.findOne()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (C:\\Users\\KOLYA\\Documents\\_projects\\Me\\vite-niftytrail-backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:569:17)\n' +
+    '    at process.processTimers (node:internal/timers:512:7)'
+}
