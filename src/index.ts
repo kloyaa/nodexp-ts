@@ -6,8 +6,11 @@ import useragent from 'express-useragent';
 import { getAwsSecrets } from "./__core/utils";
 import authController from "./auth/auth.controller";
 import securityController from "./security/security.controller";
-import "./__core/events/emitter.event"
-import  "./__core/events/listeners.event";
+import "./__core/events/emitter.event";
+import "./__core/events/listeners.event";
+import "./__core/events/cronjobs.event";
+
+
 const app = express();
   
 async function runApp() {
@@ -42,10 +45,9 @@ async function runApp() {
     /**  
      * @description Routes 
      */
-    app.get('/', (req, res) => res.send('Express Typescript on Vercel'));
+    app.get('/', (_, res) => res.send('Express Typescript on Vercel'));
     app.use("/api/v1", authController);
     app.use("/api/v1", securityController);
-
     app.listen(port, () => {
         console.log(`RUNNING ON ${process.env.NODE_ENV}`)
         console.log(`RUNNING ON ${port}`)

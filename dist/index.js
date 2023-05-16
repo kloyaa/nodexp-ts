@@ -22,6 +22,7 @@ const auth_controller_1 = __importDefault(require("./auth/auth.controller"));
 const security_controller_1 = __importDefault(require("./security/security.controller"));
 require("./__core/events/emitter.event");
 require("./__core/events/listeners.event");
+require("./__core/events/cronjobs.event");
 const app = (0, express_1.default)();
 function runApp() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -52,7 +53,7 @@ function runApp() {
         /**
          * @description Routes
          */
-        app.get('/', (req, res) => res.send('Express Typescript on Vercel'));
+        app.get('/', (_, res) => res.send('Express Typescript on Vercel'));
         app.use("/api/v1", auth_controller_1.default);
         app.use("/api/v1", security_controller_1.default);
         app.listen(port, () => {
