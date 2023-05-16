@@ -4,6 +4,8 @@ import { TAuthLogin } from "../__core/interface";
 import { generateJwt, getAwsSecrets, winstonLogger } from "../__core/utils";
 import { encrypt } from "../__core/utils/encrypt.util";
 import { UserModel } from '../user/user.model';
+import { emitter } from "../__core/events/emitter.event";
+import { Activity } from "../__core/events/types.event";
 
 const login = async (data: TAuthLogin): Promise<any> => {
     try {
@@ -13,7 +15,7 @@ const login = async (data: TAuthLogin): Promise<any> => {
         const secrets = await getAwsSecrets();
         if(!secrets) return httpMessage[10203].code;
 
-        const [compare, generatedToken] = await Promise.all([
+        const [matched, generatedToken] = await Promise.all([
             bcrypt.compare(data.password, user.hashValue) as unknown as boolean,
             generateJwt({
                 value: user._id,
@@ -22,7 +24,13 @@ const login = async (data: TAuthLogin): Promise<any> => {
             })
         ]);
 
-        if(!compare) return httpMessage[10301].code;
+        if(!matched) return httpMessage[10301].code;
+
+        emitter.emit(Activity.LOGIN,  {
+            userId: user._id,
+            activity: "LOGIN",
+            device: data.device
+        });
 
         const encryptedToken = encrypt(generatedToken, secrets?.JWT_ACCESS_KEY!);
         return `${encryptedToken.iv}.${encryptedToken.data}`;

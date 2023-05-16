@@ -6,12 +6,12 @@ import useragent from 'express-useragent';
 import { getAwsSecrets } from "./__core/utils";
 import authController from "./auth/auth.controller";
 import securityController from "./security/security.controller";
-import { HandlePromise } from "./__core/service";
-
+import "./__core/events/emitter.event"
+import  "./__core/events/events";
 const app = express();
   
 async function runApp() {
-    const secrets = await HandlePromise<any>(getAwsSecrets());
+    const secrets = await getAwsSecrets();
     let port = Number(process.env.PORT);
     let connectionString = process.env.CONNECTION_STRING!
 
@@ -20,6 +20,9 @@ async function runApp() {
         connectionString = secrets?.DB_CONNECTION_STRING!;
     }
 
+    /**  
+     * @description Database  
+     */
     mongoose
         .set("strictQuery", false)
         .set("strictPopulate", false)
@@ -46,7 +49,6 @@ async function runApp() {
         console.log(`RUNNING ON ${process.env.NODE_ENV}`)
         console.log(`RUNNING ON ${port}`)
     });
-
 }
 
 runApp();

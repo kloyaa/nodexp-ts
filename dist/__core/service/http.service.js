@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.handlePromise = void 0;
+exports.handlePromiseError = exports.handlePromise = void 0;
 const constants_1 = require("../constants");
 const utils_1 = require("../utils");
 /**
@@ -30,4 +30,16 @@ function handlePromise(promise) {
     });
 }
 exports.handlePromise = handlePromise;
+function handlePromiseError(code) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const httpMessages = constants_1.httpMessage;
+        for (const key in httpMessages) {
+            if (constants_1.httpMessage.hasOwnProperty(key) && key === code) {
+                return httpMessages[key].code;
+            }
+        }
+        return false;
+    });
+}
+exports.handlePromiseError = handlePromiseError;
 //# sourceMappingURL=http.service.js.map

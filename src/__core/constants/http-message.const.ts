@@ -1,4 +1,8 @@
-export const httpMessage = {
+type HttpMessage = {
+    [key: string]: { code: string; message: string };
+};
+
+export const httpMessage: HttpMessage = {
     // SUCCESS
     "00": {
         "code": "00",

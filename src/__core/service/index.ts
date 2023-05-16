@@ -1,1 +1,4 @@
-export { handlePromise as HandlePromise } from "./http.service";
+export { 
+    handlePromise as HandlePromise, 
+    handlePromiseError as HandlePromiseError 
+} from "./http.service";

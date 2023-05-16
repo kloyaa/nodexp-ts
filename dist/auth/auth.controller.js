@@ -19,19 +19,29 @@ const is_valid_request_body_utils_1 = require("../__core/middlewares/is-valid-re
 const auth_service_1 = require("./auth.service");
 const auth_validator_1 = require("./auth.validator");
 const index_1 = require("../__core/service/index");
+require("../__core/events/emitter.event");
+const emitter_event_1 = require("../__core/events/emitter.event");
 const router = express_1.default.Router();
 router.post("/auth/login", (0, is_valid_request_body_utils_1.expressMiddlewares)(auth_validator_1.loginValidators), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, password, device } = req.body;
+    const ipAddress = req.ip;
+    emitter_event_1.emitter.emit('activity', "USER_LOGIN", req.body);
     const errors = (0, express_validator_1.validationResult)(req);
     if (!errors.isEmpty())
         return res
             .status(400)
             .json({ errors: errors.array() });
-    const login = yield (0, index_1.HandlePromise)((0, auth_service_1.LoginService)({ username, password, device }));
-    if (login === '10301')
+    const login = yield (0, index_1.HandlePromise)((0, auth_service_1.LoginService)({
+        username,
+        password,
+        device: Object.assign(Object.assign({}, device), { ipAddress })
+    }));
+    const hasError = yield (0, index_1.HandlePromiseError)(login);
+    if (hasError && typeof hasError === 'string') {
         return res
-            .status(401)
-            .json(constants_1.httpMessage[10301]);
+            .status(400)
+            .json(constants_1.httpMessage[hasError]);
+    }
     return res.status(200).json({ accessToken: login });
 }));
 router.post("/auth/register", (0, is_valid_request_body_utils_1.expressMiddlewares)(auth_validator_1.loginValidators), (req, res) => __awaiter(void 0, void 0, void 0, function* () {

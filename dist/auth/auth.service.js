@@ -18,6 +18,8 @@ const constants_1 = require("../__core/constants");
 const utils_1 = require("../__core/utils");
 const encrypt_util_1 = require("../__core/utils/encrypt.util");
 const user_model_1 = require("../user/user.model");
+const emitter_event_1 = require("../__core/events/emitter.event");
+const types_event_1 = require("../__core/events/types.event");
 const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = yield user_model_1.UserModel.findOne({ username: data.username }).lean();
@@ -26,7 +28,7 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
         const secrets = yield (0, utils_1.getAwsSecrets)();
         if (!secrets)
             return constants_1.httpMessage[10203].code;
-        const [compare, generatedToken] = yield Promise.all([
+        const [matched, generatedToken] = yield Promise.all([
             bcrypt_1.default.compare(data.password, user.hashValue),
             (0, utils_1.generateJwt)({
                 value: user._id,
@@ -34,8 +36,13 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
                 jwtSecret: secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY,
             })
         ]);
-        if (!compare)
+        if (!matched)
             return constants_1.httpMessage[10301].code;
+        emitter_event_1.emitter.emit(types_event_1.Activity.LOGIN, {
+            userId: user._id,
+            activity: "LOGIN",
+            device: data.device
+        });
         const encryptedToken = (0, encrypt_util_1.encrypt)(generatedToken, secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY);
         return `${encryptedToken.iv}.${encryptedToken.data}`;
     }

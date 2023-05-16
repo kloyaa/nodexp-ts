@@ -5,25 +5,39 @@ import { expressMiddlewares } from '../__core/middlewares/is-valid-request-body.
 import { LoginService, RegisterService } from "./auth.service";
 import { loginValidators } from "./auth.validator";
 import { TAuthLogin } from '../__core/interface/auth.interface';
-import { HandlePromise } from "../__core/service/index";
+import { HandlePromise, HandlePromiseError } from "../__core/service/index";
+import "../__core/events/emitter.event"
+import { emitter } from "../__core/events/emitter.event";
+
+
 const router = express.Router();
 
 router.post("/auth/login", 
     expressMiddlewares(loginValidators), 
     async (req: Request, res: Response) => {
-
     const { username, password, device }: TAuthLogin = req.body;
+    const ipAddress = req.ip;
+
+    emitter.emit('activity', "USER_LOGIN", req.body);
 
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res
         .status(400)
         .json({ errors: errors.array() });
     
-    const login = await HandlePromise<any>(LoginService({ username, password, device }));
-    if(login === '10301') return res
-        .status(401)
-        .json(httpMessage[10301]);
-        
+    const login = await HandlePromise<any>(LoginService({ 
+        username, 
+        password, 
+        device: { ...device,  ipAddress } 
+    }));
+
+    const hasError = await HandlePromiseError<String | Boolean>(login);
+    if(hasError && typeof hasError === 'string') {
+        return res
+            .status(400)
+            .json(httpMessage[hasError]);
+    }
+
     return res.status(200).json({ accessToken: login });
 });
 
