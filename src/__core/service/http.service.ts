@@ -1,6 +1,5 @@
 require("dotenv").config();
 import { httpMessage } from "../constants";
-import { winstonLogger } from "../utils";
 
 type HttpMessage = {
   [key: string]: { code: string; message: string };
@@ -17,9 +16,6 @@ export async function handlePromise<T>(promise: Promise<T>): Promise<T | string>
   try {
     return await promise as T;
     } catch (error) {
-      if(process.env.NODE_ENV === "development") {
-        winstonLogger.error(error);
-      }
       return httpMessage[10203].code;
     }
 }

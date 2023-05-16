@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.handlePromiseError = exports.handlePromise = void 0;
 require("dotenv").config();
 const constants_1 = require("../constants");
-const utils_1 = require("../utils");
 /**
  * @description Wraps a promise in error handling and logging logic.
  * @param promise The promise to handle.
@@ -25,9 +24,6 @@ function handlePromise(promise) {
             return yield promise;
         }
         catch (error) {
-            if (process.env.NODE_ENV === "development") {
-                utils_1.winstonLogger.error(error);
-            }
             return constants_1.httpMessage[10203].code;
         }
     });
