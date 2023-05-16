@@ -10,6 +10,7 @@ var Activity;
 var ActivityType;
 (function (ActivityType) {
     ActivityType["LOGIN"] = "LOGIN";
+    ActivityType["LOGIN_FAILURE"] = "LOGIN_FAILURE";
     ActivityType["LOGOUT"] = "LOGOUT";
     ActivityType["ACCOUNT_CREATION"] = "ACCOUNT_CREATION";
     ActivityType["WITHDRAWAL_CREATION"] = "WITHDRAWAL_CREATION";
@@ -26,4 +27,4 @@ var ActivityType;
     ActivityType["EMAIL_NOTIFICATION"] = "EMAIL_NOTIFICATION";
     ActivityType["SMS_NOTIFICATTION"] = "SMS_NOTIFICATTION";
 })(ActivityType = exports.ActivityType || (exports.ActivityType = {}));
-//# sourceMappingURL=types.event.js.map
+//# sourceMappingURL=activity.enum.js.map

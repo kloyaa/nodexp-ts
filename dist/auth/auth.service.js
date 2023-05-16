@@ -19,7 +19,7 @@ const utils_1 = require("../__core/utils");
 const encrypt_util_1 = require("../__core/utils/encrypt.util");
 const user_model_1 = require("../user/user.model");
 const emitter_event_1 = require("../__core/events/emitter.event");
-const types_event_1 = require("../__core/events/types.event");
+const activity_enum_1 = require("../__core/enum/activity.enum");
 const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = yield user_model_1.UserModel.findOne({ username: data.username }).lean();
@@ -38,9 +38,9 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
         ]);
         if (!matched)
             return constants_1.httpMessage[10301].code;
-        emitter_event_1.emitter.emit(types_event_1.Activity.LOGIN, {
+        emitter_event_1.emitter.emit(activity_enum_1.Activity.LOGIN, {
             userId: user._id,
-            activity: types_event_1.ActivityType.LOGIN,
+            activity: activity_enum_1.ActivityType.LOGIN,
             device: data.device
         });
         const encryptedToken = (0, encrypt_util_1.encrypt)(generatedToken, secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY);
@@ -66,9 +66,9 @@ const register = (data) => __awaiter(void 0, void 0, void 0, function* () {
             jwtExpiry: "1h",
             jwtSecret: secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY,
         });
-        emitter_event_1.emitter.emit(types_event_1.Activity.ACCOUNT_CREATION, {
+        emitter_event_1.emitter.emit(activity_enum_1.Activity.ACCOUNT_CREATION, {
             userId: createdUser._id,
-            activity: types_event_1.ActivityType.ACCOUNT_CREATION,
+            activity: activity_enum_1.ActivityType.ACCOUNT_CREATION,
             device: data.device
         });
         const encryptedToken = (0, encrypt_util_1.encrypt)(generatedToken, secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY);

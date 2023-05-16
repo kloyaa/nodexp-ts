@@ -5,7 +5,7 @@ import { generateJwt, getAwsSecrets } from "../__core/utils";
 import { encrypt } from "../__core/utils/encrypt.util";
 import { UserModel } from '../user/user.model';
 import { emitter } from "../__core/events/emitter.event";
-import { Activity, ActivityType } from "../__core/events/types.event";
+import { Activity, ActivityType } from "../__core/enum/activity.enum";
 
 const login = async (data: TAuthLogin): Promise<any> => {
     try {

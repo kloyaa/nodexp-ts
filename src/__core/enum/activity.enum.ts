@@ -6,6 +6,7 @@ export enum Activity {
 
 export enum ActivityType {
     LOGIN = "LOGIN",
+    LOGIN_FAILURE = "LOGIN_FAILURE",
     LOGOUT = "LOGOUT",
     ACCOUNT_CREATION = "ACCOUNT_CREATION",
     WITHDRAWAL_CREATION = "WITHDRAWAL_CREATION",

@@ -15,5 +15,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./emitter.event"), exports);
-__exportStar(require("./types.event"), exports);
+__exportStar(require("../enum/activity.enum"), exports);
 //# sourceMappingURL=index.js.map

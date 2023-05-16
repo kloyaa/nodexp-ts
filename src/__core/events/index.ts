@@ -1,2 +1,2 @@
 export * from "./emitter.event";
-export * from "./types.event";
+export * from "../enum/activity.enum";
