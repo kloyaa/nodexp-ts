@@ -33,6 +33,7 @@ async function runApp() {
     /**  
      * @description Middlewares  
      */
+    app.set('trust proxy', true);
     app.use(cors({ origin: "*" }));
     app.use(useragent.express());
     app.use(express.json());

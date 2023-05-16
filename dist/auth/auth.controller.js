@@ -24,7 +24,7 @@ const emitter_event_1 = require("../__core/events/emitter.event");
 const router = express_1.default.Router();
 router.post("/auth/login", (0, is_valid_request_body_utils_1.expressMiddlewares)(auth_validator_1.loginValidators), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, password, device } = req.body;
-    const ipAddress = req.ip;
+    const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     emitter_event_1.emitter.emit('activity', "USER_LOGIN", req.body);
     const errors = (0, express_validator_1.validationResult)(req);
     if (!errors.isEmpty())

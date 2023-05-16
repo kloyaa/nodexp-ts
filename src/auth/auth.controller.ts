@@ -16,7 +16,7 @@ router.post("/auth/login",
     expressMiddlewares(loginValidators), 
     async (req: Request, res: Response) => {
     const { username, password, device }: TAuthLogin = req.body;
-    const ipAddress = req.ip;
+    const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
     emitter.emit('activity', "USER_LOGIN", req.body);
 

@@ -44,6 +44,7 @@ function runApp() {
         /**
          * @description Middlewares
          */
+        app.set('trust proxy', true);
         app.use((0, cors_1.default)({ origin: "*" }));
         app.use(express_useragent_1.default.express());
         app.use(express_1.default.json());
