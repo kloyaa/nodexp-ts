@@ -57,7 +57,7 @@ const register = async (data: TAuthLogin) => {
         });
     
         emitter.emit(Activity.LOGIN,  {
-            userId: user._id,
+            userId: createdUser._id,
             activity: "REGISTER",
             device: data.device
         });

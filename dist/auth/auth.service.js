@@ -67,7 +67,7 @@ const register = (data) => __awaiter(void 0, void 0, void 0, function* () {
             jwtSecret: secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY,
         });
         emitter_event_1.emitter.emit(types_event_1.Activity.LOGIN, {
-            userId: user._id,
+            userId: createdUser._id,
             activity: "REGISTER",
             device: data.device
         });
