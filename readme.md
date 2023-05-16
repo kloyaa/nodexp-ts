@@ -1,4 +1,4 @@
-<h1>Welcome to the NiftyTrail client repository!</h1>
+<h1>Welcome to the NiftyTrail server repository!</h1>
 
 This is a Node.js and Express-based web application built with TypeScript, which uses MongoDB for database storage and Mongoose for object data modeling. The app is designed to help NiftyTrail's customers book their travel experiences and plan their trips with ease.
 
