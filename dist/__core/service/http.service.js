@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.handlePromiseError = exports.handlePromise = void 0;
-require("dotenv").config();
+require('dotenv').config();
 const constants_1 = require("../constants");
 /**
  * @description Wraps a promise in error handling and logging logic.
@@ -21,7 +21,7 @@ const constants_1 = require("../constants");
 function handlePromise(promise) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            return yield promise;
+            return (yield promise);
         }
         catch (error) {
             return constants_1.httpMessage[10203].code;

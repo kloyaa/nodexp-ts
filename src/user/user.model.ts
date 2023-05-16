@@ -34,7 +34,7 @@ const UserSchema: Schema<UserDocument> = new Schema<UserDocument>(
       default: false,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const UserModel = mongoose.model<UserDocument>('User', UserSchema);

@@ -12,7 +12,8 @@
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:local": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "start:local": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "prettier": "prettier --write \"src/**/*.ts\""
   },
   "pre-commit": [
     "ts.check",
@@ -44,7 +45,11 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^20.1.1",
     "concurrently": "^8.0.1",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "pre-commit": "^1.2.2",
+    "prettier": "^2.8.8",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.4"

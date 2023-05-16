@@ -15,7 +15,7 @@ const encrypt = (json, secretKey) => {
     encrypted += cipher.final('hex');
     return {
         iv: iv.toString('hex'),
-        data: encrypted
+        data: encrypted,
     };
 };
 exports.encrypt = encrypt;

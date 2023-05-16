@@ -7,7 +7,7 @@ emitter_event_1.emitter.on('login-activity', (payload) => {
         user: payload.userId,
         editor: payload.userId,
         activity: payload.activity,
-        device: payload.device
+        device: payload.device,
     }).save();
 });
 emitter_event_1.emitter.on('register-activity', (payload) => {
@@ -15,7 +15,7 @@ emitter_event_1.emitter.on('register-activity', (payload) => {
         user: payload.userId,
         editor: payload.userId,
         activity: payload.activity,
-        device: payload.device
+        device: payload.device,
     }).save();
 });
 //# sourceMappingURL=listeners.event.js.map

@@ -32,22 +32,22 @@ const login = (data) => __awaiter(void 0, void 0, void 0, function* () {
             bcrypt_1.default.compare(data.password, user.hashValue),
             (0, utils_1.generateJwt)({
                 value: user._id,
-                jwtExpiry: "1h",
+                jwtExpiry: '1h',
                 jwtSecret: secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY,
-            })
+            }),
         ]);
         if (!matched) {
             emitter_event_1.emitter.emit(activity_enum_1.Activity.LOGIN, {
                 userId: user._id,
                 activity: activity_enum_1.ActivityType.LOGIN_FAILURE,
-                device: data.device
+                device: data.device,
             });
             return constants_1.httpMessage[10301].code;
         }
         emitter_event_1.emitter.emit(activity_enum_1.Activity.LOGIN, {
             userId: user._id,
             activity: activity_enum_1.ActivityType.LOGIN,
-            device: data.device
+            device: data.device,
         });
         const encryptedToken = (0, encrypt_util_1.encrypt)(generatedToken, secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY);
         return `${encryptedToken.iv}.${encryptedToken.data}`;
@@ -69,13 +69,13 @@ const register = (data) => __awaiter(void 0, void 0, void 0, function* () {
         const createdUser = yield new user_model_1.UserModel(Object.assign(Object.assign({}, data), { hashValue })).save();
         const generatedToken = yield (0, utils_1.generateJwt)({
             value: createdUser._id,
-            jwtExpiry: "1h",
+            jwtExpiry: '1h',
             jwtSecret: secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY,
         });
         emitter_event_1.emitter.emit(activity_enum_1.Activity.ACCOUNT_CREATION, {
             userId: createdUser._id,
             activity: activity_enum_1.ActivityType.ACCOUNT_CREATION,
-            device: data.device
+            device: data.device,
         });
         const encryptedToken = (0, encrypt_util_1.encrypt)(generatedToken, secrets === null || secrets === void 0 ? void 0 : secrets.JWT_ACCESS_KEY);
         return `${encryptedToken.iv}.${encryptedToken.data}`;

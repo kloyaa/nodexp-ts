@@ -29,21 +29,21 @@ const LogActivitySchema = new mongoose_1.Schema({
     user: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
+        ref: 'User',
     },
     editor: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
+        ref: 'User',
     },
     activity: {
         type: Object,
-        required: true
+        required: true,
     },
     device: {
         type: Object,
-        required: true
-    }
+        required: true,
+    },
 }, { timestamps: true });
 exports.LogActivityModel = mongoose_1.default.model('LogActivity', LogActivitySchema);
 //# sourceMappingURL=activity.model.js.map

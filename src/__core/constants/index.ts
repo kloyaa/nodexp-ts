@@ -1,1 +1,1 @@
-export *  from "./http-message.const";
+export * from './http-message.const';

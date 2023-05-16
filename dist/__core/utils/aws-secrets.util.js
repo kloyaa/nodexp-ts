@@ -10,24 +10,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAwsSecrets = void 0;
-require("dotenv").config();
+require('dotenv').config();
 const client_secrets_manager_1 = require("@aws-sdk/client-secrets-manager");
 const getAwsSecrets = () => __awaiter(void 0, void 0, void 0, function* () {
     const clientConfig = {
-        region: "ap-southeast-1",
+        region: 'ap-southeast-1',
         credentials: {
             accessKeyId: process.env.AWS_ACCESS_KEY_ID,
             secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        }
+        },
     };
     const client = new client_secrets_manager_1.SecretsManagerClient(clientConfig);
     const params = {
         SecretId: process.env.AWS_SECRET_ID,
-        VersionStage: "AWSCURRENT",
+        VersionStage: 'AWSCURRENT',
     };
     try {
         const data = yield client.send(new client_secrets_manager_1.GetSecretValueCommand(params));
-        if ("SecretString" in data && data.SecretString !== undefined) {
+        if ('SecretString' in data && data.SecretString !== undefined) {
             const parsedData = JSON.parse(data.SecretString);
             return parsedData;
         }

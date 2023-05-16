@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("dotenv").config();
+require('dotenv').config();
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const cors_1 = __importDefault(require("cors"));
@@ -29,7 +29,7 @@ function runApp() {
         const secrets = yield (0, utils_1.getAwsSecrets)();
         let port = Number(process.env.PORT);
         let connectionString = process.env.CONNECTION_STRING;
-        if (process.env.NODE_ENV === "production") {
+        if (process.env.NODE_ENV === 'production') {
             port = secrets === null || secrets === void 0 ? void 0 : secrets.PORT;
             connectionString = secrets === null || secrets === void 0 ? void 0 : secrets.DB_CONNECTION_STRING;
         }
@@ -37,16 +37,16 @@ function runApp() {
          * @description Database
          */
         mongoose_1.default
-            .set("strictQuery", false)
-            .set("strictPopulate", false)
+            .set('strictQuery', false)
+            .set('strictPopulate', false)
             .connect(connectionString)
-            .then(() => console.log("DATABASE CONNECTED"))
-            .catch(() => console.log("DABASE DISCONNECTED"));
+            .then(() => console.log('DATABASE CONNECTED'))
+            .catch(() => console.log('DABASE DISCONNECTED'));
         /**
          * @description Middlewares
          */
         app.set('trust proxy', true);
-        app.use((0, cors_1.default)({ origin: "*" }));
+        app.use((0, cors_1.default)({ origin: '*' }));
         app.use(express_useragent_1.default.express());
         app.use(express_1.default.json());
         app.use(express_1.default.urlencoded({ limit: '25mb', extended: true }));
@@ -54,8 +54,8 @@ function runApp() {
          * @description Routes
          */
         app.get('/', (_, res) => res.send('Express Typescript on Vercel'));
-        app.use("/api/v1", auth_controller_1.default);
-        app.use("/api/v1", security_controller_1.default);
+        app.use('/api/v1', auth_controller_1.default);
+        app.use('/api/v1', security_controller_1.default);
         app.listen(port, () => {
             console.log(`RUNNING ON ${process.env.NODE_ENV}`);
             console.log(`RUNNING ON ${port}`);
