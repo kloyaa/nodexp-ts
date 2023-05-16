@@ -7,8 +7,6 @@ import { loginValidators } from "./auth.validator";
 import { TAuthLogin } from '../__core/interface/auth.interface';
 import { HandlePromise, HandlePromiseError } from "../__core/service/index";
 import "../__core/events/emitter.event"
-import { emitter } from "../__core/events/emitter.event";
-
 
 const router = express.Router();
 
@@ -49,7 +47,6 @@ router.post("/auth/register",
     if (!errors.isEmpty()) return res
         .status(400)
         .json({ errors: errors.array() });
-
 
     const register = await HandlePromise<string>(RegisterService({ 
         username, 
