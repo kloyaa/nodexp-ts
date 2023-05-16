@@ -2,14 +2,12 @@ import { createLogger, format, transports } from 'winston';
 import 'winston-daily-rotate-file';
 
 const logDir = 'logs';
-
 const dailyRotateFileTransport = new transports.DailyRotateFile({
   filename: `${logDir}/%DATE%.log`,
   datePattern: 'YYYY-MM-DD',
   maxSize: '20m',
   maxFiles: '14d'
 });
-
 const logger = createLogger({
   level: 'info',
   format: format.combine(

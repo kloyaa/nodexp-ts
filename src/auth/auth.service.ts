@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import { httpMessage } from "../__core/constants";
 import { TAuthLogin } from "../__core/interface";
-import { generateJwt, getAwsSecrets, winstonLogger } from "../__core/utils";
+import { generateJwt, getAwsSecrets } from "../__core/utils";
 import { encrypt } from "../__core/utils/encrypt.util";
 import { UserModel } from '../user/user.model';
 import { emitter } from "../__core/events/emitter.event";

@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.handlePromiseError = exports.handlePromise = void 0;
+require("dotenv").config();
 const constants_1 = require("../constants");
 const utils_1 = require("../utils");
 /**
@@ -24,7 +25,9 @@ function handlePromise(promise) {
             return yield promise;
         }
         catch (error) {
-            utils_1.winstonLogger.error(error);
+            if (process.env.NODE_ENV === "development") {
+                utils_1.winstonLogger.error(error);
+            }
             return constants_1.httpMessage[10203].code;
         }
     });
