@@ -4,7 +4,7 @@ require('dotenv').config();
 const cron_1 = require("cron");
 const enum_1 = require("../enum");
 const cron = (exression, func) => {
-    const timezone = process.env.TZ || 'Asia/Manila';
+    const timezone = process.env.DEFAULT_TZ || 'Asia/Manila';
     const startOnInit = false;
     const startNow = true;
     const context = null;

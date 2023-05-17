@@ -3,7 +3,7 @@ import { CronJob } from 'cron';
 import { CronExpression } from '../enum';
 
 const cron = (exression: CronExpression, func: Function) => {
-  const timezone = process.env.TZ || 'Asia/Manila';
+  const timezone = process.env.DEFAULT_TZ || 'Asia/Manila';
   const startOnInit: boolean = false;
   const startNow: boolean = true;
   const context: any = null;
